@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>delete li</title>
+    <style type="text/css">
+        ul li{
+            list-style: none;
+            font-size: 16px;
+            line-height: 50px;
+        }
+        .btn{
+            background-color: aqua;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;;
+            line-height: 30px;
+            width: 100px;
+        }
+    </style>
+    <script type="text/javascript" src="./jquery-3.1.0.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            const $list = $('#list');
+            console.log($list);
+            $list.on('click','li',
+            function () {
+                const index = $(this).index;
+                console.log(index);
+                $(this).remove();
+            })
+        })
+    </script>
+</head>
+<body>
+<ul id="list">
+    <li>我是第一个li <input type="button" value="deleter" class="btn"></li>
+    <li>我是第二个li <input type="button" value="deleter" class="btn"></li>
+    <li>我是第三个li <input type="button" value="deleter" class="btn"></li>
+    <li>我是第四个li <input type="button" value="deleter" class="btn"></li>
+    <li>我是第五个li <input type="button" value="deleter" class="btn"></li>
+</ul>
+</body>
+</html>

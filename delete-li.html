@@ -21,24 +21,37 @@
     <script type="text/javascript" src="./jquery-3.1.0.min.js"></script>
     <script type="text/javascript">
         $(function(){
-            const $list = $('#list');
-            console.log($list);
-            $list.on('click','li',
+            const $list1 = $('#list1');
+            const $list2 = $('#list2');
+            var z = $list2.find('li').length - $list1.find('li').length;
+            $list1.on('click','li',
             function () {
                 const index = $(this).index;
                 console.log(index);
                 $(this).remove();
+                $('#list2 li').eq($(this).index()+z+1).remove();
             })
         })
     </script>
 </head>
 <body>
-<ul id="list">
+<ul id="list1">
     <li>我是第一个li <input type="button" value="deleter" class="btn"></li>
     <li>我是第二个li <input type="button" value="deleter" class="btn"></li>
     <li>我是第三个li <input type="button" value="deleter" class="btn"></li>
     <li>我是第四个li <input type="button" value="deleter" class="btn"></li>
     <li>我是第五个li <input type="button" value="deleter" class="btn"></li>
+</ul>
+<ul id="list2">
+    <li>我是li的旧内容</li>
+    <li>我是li的旧内容</li>
+    <li>我是li的旧内容</li>
+    <li>我是li的旧内容</li>
+    <li>我是第一个li </li>
+    <li>我是第二个li </li>
+    <li>我是第三个li </li>
+    <li>我是第四个li </li>
+    <li>我是第五个li</li>
 </ul>
 </body>
 </html>
